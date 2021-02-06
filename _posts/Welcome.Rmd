@@ -1,0 +1,17 @@
+---
+title: "welcome"
+description: |
+  Welcome to my blog
+author: 
+ - name: Hannah Garcia-Wickstrum
+date: "2/6/2021"
+output: 
+  distill::distill_article:
+    self_contained: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Welcome everyone! bada-bing-bada-boom

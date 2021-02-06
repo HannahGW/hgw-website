@@ -1,0 +1,19 @@
+[
+  {
+    "path": "posts/",
+    "title": "welcome",
+    "description": "Welcome to my blog",
+    "author": [
+      {
+        "name": "Hannah Garcia-Wickstrum",
+        "url": {}
+      }
+    ],
+    "date": "2021-02-06",
+    "categories": [],
+    "contents": "\nWelcome everyone! bada-bing-bada-boom\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-02-06T15:46:16-08:00",
+    "input_file": "Welcome.utf8.md"
+  }
+]

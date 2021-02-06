@@ -13,4 +13,6 @@ output:
 site: distill::distill_website
 ---
  
-I am second year Master's student at the Bren School of Environmental Science and Management. My research looks at the changes in forest composition and structure of Yellow Pine Mixed Conifer Forests in Southern California over the last century. At Bren, I am specializing in Conservation Planning and Environmental Data Science. I hope to work for a federal or state agency to manage lands and preserve biodiversity. Some of my favorite things include a good latte, my cat, and California wildflowers. 
+I am second year Master's student at the Bren School of Environmental Science and Management. My research looks at the changes in forest composition and structure of Yellow Pine Mixed Conifer Forests in Southern California over the last century.
+
+Some of my favorite things include a good latte, my cat, and California wildflowers. 
