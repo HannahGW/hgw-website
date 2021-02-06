@@ -1,20 +1,16 @@
 ---
 title: "Hannah Garcia-Wickstrum"
-image: "hannah.jpeg"
+image: "poppies.jpeg"
 links:
   - label: LinkedIn
-    url: "https://linkedin.com/"
-  - label: Twitter
-    url: "https://twitter.com/"
+    url: "https://www.linkedin.com/in/hannah-garcia-wickstrum-65629a133/"
   - label: GitHub
-    url: "https://github.com/"
+    url: "https://github.com/HannahGW"
   - label: Email
-    url: "mailto:email@email.com"
+    url: "hannah_garcia@ucsb.edu"
 output:
   postcards::jolla
 site: distill::distill_website
 ---
  
-I am a classically trained data scientist living in the San Francisco Bay Area. 
-Currently I work on the Oculus team at Facebook. I love talking about baseball, 
-true crime podcasts, and causal inference.
+I am second year Master's student at the Bren School of Environmental Science and Management. My research looks at the changes in forest composition and structure of Yellow Pine Mixed Conifer Forests in Southern California over the last century. At Bren, I am specializing in Conservation Planning and Environmental Data Science. I hope to work for a federal or state agency to manage lands and preserve biodiversity. Some of my favorite things include a good latte, my cat, and California wildflowers. 
