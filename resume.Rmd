@@ -1,0 +1,81 @@
+---
+title: "resume"
+author: "Hannah Garcia-Wickstrum"
+date: "2/6/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Hannah Garcia-Wickstrum
+hannah_garcia@ucsb.edu | (805) 760-4030 | Ventura, CA
+
+## EDUCATION
+### Master of Environmental Science and Management (Expected June 2021) \
+Bren School of Environmental Science & Management – University of California, Santa Barbara (UCSB) \
+Specialization: Conservation Planning \
+
+### Bachelor of Science in Biological Sciences (June 2014) \
+University of California, Davis (UCD), Davis, CA \
+Emphasis: Evolution, Ecology, and Biodiversity \
+
+## MASTER'S RESEARCH PROJECT
+### Forest Conservation Group Project, (4/19 – Present) \
+Bren School of Environmental Science & Management \
+Role: Project & Outreach Manager | Client: U.S. Forest Service \
+Conservation of Yellow Pine Mixed Conifer Forests in Southern California \
+- Worked as part of a four-person team to assess the changes in forest structure and composition in southern \ California Yellow Pine Mixed Conifer Forests to aid in the conservation of these sky-island habitats \
+- Analyzed the changes in tree density, basal area, size class, canopy cover, and shrubs between the 1930s and \ present \
+
+## CONSERVATION & ECOLOGICAL EXPERIENCE
+### Research Assistant – USFS, Goleta, CA (7/20-9/20) \
+-Updated a climate change report for the Angeles National Forest and San Bernardino National Forest \
+- Summarized current trends and probable future trends in climate and climate-driven processes by reviewing the \ most recent climate literature and analyzing and graphing recent WRCC climate data \ 
+
+### Program Manager – Santa Clara River Conservancy (SCRC), Santa Paula, CA (3/17-9/19) \
+- Managed a restoration project (budget 341,775) in partnership with California Trout, Inc. to remove 35 acres of \ invasive giant reed from the floodplain (Proposition 84 funding source) \
+- Coordinated sub-contractor work and scheduling for 3 contractors; drafted 2 requests for proposals (RFPs), \ Scopes of Work (SOWs), and finalized contractual agreements between SCRC and contractors \
+- Supervised SCRC’s education and outreach coordinator by overseeing scheduling and execution of elementary \ school field trips and providing feedback of program materials \
+- Led monthly volunteer events including cleanups, weed removal, and community garden-building \
+
+### Restoration Research Assistant – Marine Science Institute, UCSB, Santa Barbara, CA (3/17-4/19) \
+- Implemented restoration plans by monitoring line-intercept vegetation transects at 4 project sites to determine \ invasive species removal effectiveness and measure native species percent cover \
+- Removed 30+ acres of invasive plant species (mostly giant reed) using techniques including: backpack spraying, \ cut-and-daub, hand removal, and mastication \
+
+### Botany Technician – Plumas National Forest, USFS, Quincy, CA (5/16-1/17) \
+- Surveyed over 1,500 acres for rare plants, noxious weeds, and general vegetation surveys \
+- Collected spatial and quantitative data on rare and noxious plants using a Trimble Geo 7X \
+- Authored 20+ reconnaissance reports for all surveyed areas for the 2016 field season \
+
+### Research Assistant – USFS & Colorado State University, Quincy, CA (7/16-10/16) \
+- Backpacked to remote wilderness locations to record species-specific vegetation cover to be used in correspondence with the carbon exchange rate to determine the degradation of peat in Sierra Nevada fens \
+Intern – California State Department of Fish and Wildlife, Sacramento, CA (1/14 – 6/14)
+- Assisted environmental scientists in the endangered species division on researching literature for incidental take permits for the desert tortoise (Gopherus agassizii) \
+
+## TEACHING EXPERIENCE
+###Teaching Assistant – University of California, Santa Barbara, Santa Barbara, CA (4/20-present)
+- ES 15A: Environmental Chemistry, Dr. Helene Gardner (Winter 2021) \
+- TMP 127: Understanding and Managing Technology Organizations, Kathryn McKee (Fall 2020) \
+- PSY 10A: Research and Methods, Dr. Vanessa Woods (Spring 2020) \
+
+## EDUCATION & OUTREACH EXPERIENCE
+### Nursery Manager – Santa Barbara Botanic Garden, Santa Barbara, CA (5/15-4/16)
+- Propagated California native plant species through cuttings, divisions, and seeds
+- Managed 3-5 daily nursery volunteers
+- Organized and managed two, month-long native plant sales
+- Engaged with visitors and answered horticultural questions about California native plants
+
+### Restoration Program Assistant – Santa Monica Mountains NRA, Thousand Oaks, CA (10/14-5/15)
+- Led native plant restoration and invasive crayfish removal programs to high school students from underserved \ communities at Paramount Ranch and Zuma Canyon \
+- Assisted with the SHRUBS program by leading the nursery and planting stations at Rancho Sierra Vista \
+Interpreter – Santa Monica Mountains NRA, Thousand Oaks, CA (6/13-9/13) \
+- Led public hikes at various park locations, assisted with set-up for park events, and staffed the Visitor \ Center and Satwiwa Culture Center \
+
+## SKILLS & AFFILIATIONS
+- Leadership: Project management, conflict resolution and mediation \
+- Technical: Microsoft Office (Word, Excel, PowerPoint), ArcGIS, Model Builder, R Studio, data management, \ Wordpress \
+-Botanical: Jepson Manual, plant identification, extensive field-work and survey experience \ 
+- Memberships: Southern California Botanists, California Native Plant Society (CNPS) \
+- Committee Memberships: Student Advisor for CNPS (2019-2020 school year) \
