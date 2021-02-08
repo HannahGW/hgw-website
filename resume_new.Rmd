@@ -1,0 +1,19 @@
+---
+title: "resume_new"
+author: "Hannah Garcia"
+date: "2/7/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r,}
+name = "Resume"
+url = "www/resume.pdf"
+weight = 40
+```
+
+
+
