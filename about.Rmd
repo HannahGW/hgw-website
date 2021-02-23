@@ -1,14 +1,12 @@
 ---
 title: "About Me"
 description: |
-  My Experiences
+  My Experiences 
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
-
 ```
-![Link to my Resume](docs/www/resume.pdf)
 
 I am born and raised in southern California. I grew up in Ventura County where I was lucky enough to have the Santa Monica Mountains as my front yard, and the Los Padres National Forest as my backyard. Once I started exploring public lands, I fell in love with California's biodiversity. I realized that I wanted to be a field biologist in order to be apart of the conservation of California's diverse habitats. I eventually graduated from UC Davis with a degree in biology and began my career as a botanist and ecologist. 
 
