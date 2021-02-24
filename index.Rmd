@@ -13,6 +13,6 @@ output:
 site: distill::distill_website
 ---
  
-I am second year Master's student at the Bren School of Environmental Science and Management. My research looks at the changes in forest composition and structure of Yellow Pine Mixed Conifer Forests in Southern California over the last century.
+I am second year master's student at the Bren School of Environmental Science and Management. My research investigates the changes in forest composition and structure of yellow pine mixed-conifer forests in southern California over the last century.
 
 Some of my favorite things include a good latte, my cat, and California wildflowers. 

@@ -1,11 +1,48 @@
 ---
-title: "Porfolio"
-author: "Hannah Garcia"
-date: "2/21/2021"
-output: html_document
+title: "Portfolio"
 ---
 
-```{r setup, include=FALSE}
+```{r setup, include=FALSE, echo=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Interactive Map of Oil Spills in California 
+Data is managed by the California Department of Fish and Wildlife and can be accessed [here](https://gis.data.ca.gov/datasets/7464e3d6f4924b50ad06e5a553d71086_0?orderBy=DATEOFINCI) 
+
+```{r, messages=FALSE, warning=FALSE, echo=FALSE}
+# Upload packages
+library(tidyverse)
+library(here)
+library(janitor)
+library(sf)
+library(tmap)
+library(gstat)
+library(stars)
+
+## ---------------------------------------------------------------------------
+# read in oil spill data
+oil_spills <- read_sf(here("oil_spill","Oil_Spill_Incident_Tracking_%5Bds394%5D.shp"))
+
+ca_counties <- read_sf(here("ca_counties", "CA_Counties_TIGER2016.shp"))
+
+ca_subset <- ca_counties %>% 
+  select(NAME, ALAND) %>% 
+  rename(county_name = NAME, land_area = ALAND)
+
+# check the coordinate system
+# st_crs(ca_subset) # WGS 84 
+# st_crs(oil_spills) # WGS 84
+
+# update the coordinate system to match with ca_counties (think it already matched but just in case)
+oil_spills <- sf::st_transform(oil_spills, 3857)
+## ---------------------------------------------------------------------------
+# Set the viewing mode to "interactive":
+tmap_mode(mode = "view")
+
+# Then make a map (with the polygon fill color updated by variable 'land_area', updating the color palette to "BuGn"), then add another shape layer for the sesbania records (added as dots):
+tm_shape(ca_subset) +
+  tm_fill("land_area", palette = "BuGn") +
+  tm_shape(oil_spills) +
+  tm_dots()
 ```
 
