@@ -60,7 +60,7 @@ ggplot(data = ca_spills_counts) +
   labs(fill = "Number of Oil Spills per County")
 ```
 
-### Text Sentiment Analysis of *Catcher in the Rye* by J.D. Salinger
+### Text Sentiment Analysis and Word Cloud of the Top 50 Words in *Catcher in the Rye* by J.D. Salinger
 
 - Used NRC analysis, which uses crowd-sourcing to assign words to 8 basic emotions with two sentiments (positive and negative).
 
@@ -112,6 +112,30 @@ ggplot(data = catcher_nrc_counts, aes(x=reorder(sentiment, +n), y=n)) +
   theme_minimal() +
   labs(title = "NRC Sentiments of Catcher in the Rye", x = "Sentiment", y = "count") +
   theme(plot.title = element_text(hjust = 0.5))
+
+# find top 25 words in the book
+top_25_words <- nonstop_counts %>% 
+  arrange(-n) %>% 
+  slice(1:25)
+
+# find top 50 words
+top_50_words <- nonstop_counts %>% 
+  arrange(-n) %>% 
+  slice(1:50)
+
+# ggplot(top_25_words, aes(x = word, y = n)) +
+#   geom_col(fill = "blue") +
+#   coord_flip()
+
+# make a word cloud
+catcher_cloud <- ggplot(data = top_50_words, aes(label = word)) +
+  geom_text_wordcloud(aes(color = n, size = n), shape="diamond") +
+  scale_size_area(max_size = 8) +
+  labs(title = "Top 50 Words in Catcher in the Rye") +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_color_viridis(option = "D")
+  
+catcher_cloud
 
 ```
 **Citation:** Salinger, J. D. 1. (1945). Catcher in the rye. Boston: Little, Brown and Company.
