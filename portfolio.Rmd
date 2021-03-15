@@ -1,12 +1,12 @@
 ---
-title: "Portfolio"
+title: "Data Analysis Portfolio"
 ---
 
 ```{r setup, include=FALSE, echo=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-### Interactive Map of Oil Spills in California 
+### Chloropleth Map of Oil Spills in California by County
 Data is managed by the California Department of Fish and Wildlife and can be accessed [here](https://gis.data.ca.gov/datasets/7464e3d6f4924b50ad06e5a553d71086_0?orderBy=DATEOFINCI) 
 
 ```{r, messages=FALSE, warning=FALSE, echo=FALSE}
@@ -37,12 +37,131 @@ ca_subset <- ca_counties %>%
 oil_spills <- sf::st_transform(oil_spills, 3857)
 ## ---------------------------------------------------------------------------
 # Set the viewing mode to "interactive":
-tmap_mode(mode = "view")
+# tmap_mode(mode = "view")
+# 
+# # Then make a map (with the polygon fill color updated by variable 'land_area', updating the color palette to "BuGn"), then add another shape layer for the sesbania records (added as dots):
+# tm_shape(ca_subset) +
+#   tm_fill("land_area", palette = "BuGn") +
+#   tm_shape(oil_spills) +
+#   tm_dots()
 
-# Then make a map (with the polygon fill color updated by variable 'land_area', updating the color palette to "BuGn"), then add another shape layer for the sesbania records (added as dots):
-tm_shape(ca_subset) +
-  tm_fill("land_area", palette = "BuGn") +
-  tm_shape(oil_spills) +
-  tm_dots()
+ca_spills <- ca_subset %>%
+  st_join(oil_spills)
+
+# clean up dataframe
+ca_spills_counts <- ca_spills %>% 
+  count(county_name)
+
+# chloropleth graph
+ggplot(data = ca_spills_counts) +
+  geom_sf(aes(fill = n), color = "white", size = 0.1) +
+  scale_fill_gradientn(colors = c("lightgray","orange","red")) +
+  theme_minimal() +
+  labs(fill = "Number of Oil Spills per County")
 ```
 
+### Text Sentiment Analysis of *Catcher in the Rye* by J.D. Salinger
+
+- Used NRC analysis, which uses crowd-sourcing to assign words to 8 basic emotions with two sentiments (positive and negative).
+
+```{r, messages=FALSE, warning=FALSE, echo=FALSE}
+library(tidytext)
+library(textdata)
+library(pdftools)
+library(ggwordcloud)
+library(ggimage)
+library(ggpubr)
+library(viridis)
+
+# read in the pdf 
+catcher_text <- pdf_text("catcher_in_the_rye.pdf")
+
+catcher_tidy <- data.frame(catcher_text) %>% 
+  mutate(text_full = str_split(catcher_text, pattern = "\\n")) %>% 
+  unnest(text_full) %>% 
+  mutate(text_full = str_trim(text_full))
+
+catcher_df <- catcher_tidy %>% 
+  slice(-(1:5)) 
+
+catcher_tokens <- catcher_df %>% 
+  unnest_tokens(word, text_full) %>% 
+  dplyr::select(-catcher_text) 
+
+catcher_wordcount <- catcher_tokens %>% 
+  count(word)
+
+# remove stop words
+catcher_nonstop_words <- catcher_tokens %>% 
+  anti_join(stop_words)
+
+nonstop_counts <- catcher_nonstop_words %>% 
+  count(word)
+
+# Sentiment Analysis - NRC
+
+catcher_nrc <- catcher_nonstop_words %>% 
+  inner_join(get_sentiments("nrc"))
+
+catcher_nrc_counts <- catcher_nrc %>% 
+  count(sentiment)
+
+ggplot(data = catcher_nrc_counts, aes(x=reorder(sentiment, +n), y=n)) +
+  geom_col(color = "orange", fill = "orange") +
+  coord_flip() +
+  theme_minimal() +
+  labs(title = "NRC Sentiments of Catcher in the Rye", x = "Sentiment", y = "count") +
+  theme(plot.title = element_text(hjust = 0.5))
+
+```
+**Citation:** Salinger, J. D. 1. (1945). Catcher in the rye. Boston: Little, Brown and Company.
+
+### Agglomerative Hierarchical Clustering of Streams in Santa Barbara, CA
+
+- A team of scientists have been sampling stream chemistry in the Santa Barbara Coastal drainage area since 2000. Stream chemistry is important to monitor as streams reach the ocean and can transport chemicals like nitrate, ammonium, and reactive phosphorous. Below is a dendogram using agglomerative hierarchical clustering of each stream site.
+
+```{r, messages=FALSE, warning=FALSE, echo=FALSE, fig.cap= "A hierarchical dendrogram of sampled stream sites in the Santa Barbara Coustal Drainage Area. Measurements include various forms of dissolved N; soluble reactive P; and particulates of C, N, and P; suspended sediments; and conductivity."}
+# packages for cluster analysis
+library(NbClust)
+library(cluster)
+library(factoextra)
+library(dendextend)
+library(ggdendro)
+
+# Read in data
+stream_data <- read_csv("sbc_lter_registered_stream_chemistry.csv")
+
+# Convert to NAs
+stream_data[stream_data == -999.0] <- NA
+
+# Find means for all variables for each site
+stream_means <- stream_data %>% 
+  group_by(site_code) %>% 
+  summarize(across(nh4_uM:spec_cond_uSpercm, mean, na.rm = TRUE))
+
+# Scale the data
+stream_means_scaled <- stream_means %>% 
+  select(2:11) %>% 
+  scale()
+
+# assign the site_code back into the data
+rownames(stream_means_scaled) <- stream_means$site_code
+
+# Calculate the Euclidean distance
+euc_distance <- dist(stream_means_scaled, method = "euclidean")
+# view(euc_distance)
+
+# Hierarchical clustering with complete linkage
+hc_complete <- hclust(euc_distance, method = "complete")
+
+# plot
+# plot(hc_complete, cex = 0.6, hang = -1)
+
+# Make the dendogram using ggdendrogram
+ggdendrogram(hc_complete,
+             rotate = TRUE) +
+  theme_minimal() + 
+  labs(x = "Stream Site",
+       y = "")
+```
+**Data Citation:** Santa Barbara Coastal LTER and J. Melack. 2019. SBC LTER: Land: Stream chemistry in the Santa Barbara Coastal drainage area, ongoing since 2000 ver 16. Environmental Data Initiative. 
