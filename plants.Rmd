@@ -1,0 +1,13 @@
+---
+title: "California Native Plants"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### A Gallery of Some of My Favorite California Native Plants
+
+![Owls Clover (*Castilleja exserta*) at Carrizo Plain National Monument](plant_photos/owls_clover.jpeg)
+
+![Butterfly Mariposa Lily (*Calochortus venustus*) at Mt. Pinos, Los Padres National Forest](plant_photos/c_venustus.jpeg)

@@ -16,6 +16,8 @@ navbar:
       href: blog.html
     - text: "Portfolio"
       href: portfolio.html
+    - text: "Plants"
+      href: plants.html
 output: distill::distill_article
 
 
